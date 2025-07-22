@@ -148,8 +148,6 @@ export default function Skills() {
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-2">
                         <div
-                          className="bg-gradient-to-r from-cyan-400 to-purple-500 h-2 rounded-full transition-all duration-1000 ease-out shadow-lg"
-                        <div
                           className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full transition-all duration-1000 ease-out shadow-lg"
                           style={{ width: `${skill.level}%` }}
                         ></div>
