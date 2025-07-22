@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Code, Smartphone, Globe, Database, Shield, Brain, ShoppingCart, Car, BookOpen, Calculator } from 'lucide-react';
 
 export default function Projects() {
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = itemRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                setVisibleItems(prev => [...prev, index]);
+              }, index * 150);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
+
   const projects = [
     {
       title: "MRI-Based Brain Tumor Classification using CNN & XAI",
@@ -137,8 +169,16 @@ export default function Projects() {
             const IconComponent = project.icon;
             return (
               <div
+                ref={(el) => itemRefs.current[index] = el}
                 key={index}
-                className="group bg-white/5 backdrop-blur-lg rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/10 hover:border-white/20 hover:bg-white/10"
+                className={`group bg-white/5 backdrop-blur-lg rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border border-white/10 hover:border-white/20 hover:bg-white/10 transform ${
+                  visibleItems.includes(index) 
+                    ? 'translate-y-0 opacity-100' 
+                    : 'translate-y-8 opacity-0'
+                }`}
+                style={{
+                  transitionDelay: visibleItems.includes(index) ? `${index * 100}ms` : '0ms'
+                }}
               >
                 {/* Project Header */}
                 <div className="flex items-start justify-between mb-4">

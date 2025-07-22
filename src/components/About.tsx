@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Code, Palette, Users, Lightbulb } from 'lucide-react';
 
 export default function About() {
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = itemRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                setVisibleItems(prev => [...prev, index]);
+              }, index * 200);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
+
   const skills = [
     { category: 'Design', icon: Palette, items: ['UI/UX Design', 'User Research', 'Prototyping', 'Design Systems'] },
     { category: 'Technical', icon: Code, items: ['HTML/CSS', 'JavaScript', 'React', 'Git'] },
@@ -66,8 +98,16 @@ export default function About() {
             const IconComponent = skill.icon;
             return (
               <div
+                ref={(el) => itemRefs.current[index] = el}
                 key={skill.category}
-                className="group p-6 bg-white/5 backdrop-blur-lg rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-white/10 hover:border-white/20 hover:bg-white/10"
+                className={`group p-6 bg-white/5 backdrop-blur-lg rounded-xl hover:shadow-lg transition-all duration-700 hover:-translate-y-2 border border-white/10 hover:border-white/20 hover:bg-white/10 transform ${
+                  visibleItems.includes(index) 
+                    ? 'translate-y-0 opacity-100' 
+                    : 'translate-y-8 opacity-0'
+                }`}
+                style={{
+                  transitionDelay: visibleItems.includes(index) ? `${index * 100}ms` : '0ms'
+                }}
               >
                 <div className="flex items-center mb-4">
                   <div className="p-3 bg-white/10 backdrop-blur-sm rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300 border border-white/20">
