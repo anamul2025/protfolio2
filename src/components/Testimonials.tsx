@@ -63,9 +63,9 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Testimonials</span>
+            Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Testimonials</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-4"></div>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             What my clients say about working with me
           </p>
@@ -87,7 +87,7 @@ export default function Testimonials() {
             >
               {/* Quote Icon */}
               <div className="absolute -top-4 left-6">
-                <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-3 rounded-full shadow-lg backdrop-blur-sm border border-white/20">
+                <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-3 rounded-full shadow-lg backdrop-blur-sm border border-white/20">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
                   {testimonial.avatar}
                 </div>
                 <div>

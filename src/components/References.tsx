@@ -39,9 +39,9 @@ export default function References() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">References</span>
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">References</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-4"></div>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Trusted professionals who can speak to my work ethic and capabilities
           </p>
@@ -124,7 +124,7 @@ export default function References() {
         </div>
 
         {/* Reference Note */}
-        <div className="bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-8 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <User className="w-12 h-12 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Professional References</h3>

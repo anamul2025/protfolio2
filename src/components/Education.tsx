@@ -69,9 +69,9 @@ export default function Education() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Education</span>
+            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Education</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-4"></div>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Academic foundation that shaped my technical expertise and design thinking
           </p>
@@ -162,7 +162,7 @@ export default function Education() {
         {/* Academic Achievements Summary */}
         <div 
           ref={(el) => itemRefs.current[education.length] = el}
-          className={`mt-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl p-8 text-white transition-all duration-700 transform ${
+          className={`mt-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-8 text-white transition-all duration-700 transform ${
             visibleItems.includes(education.length) 
               ? 'translate-y-0 opacity-100' 
               : 'translate-y-8 opacity-0'

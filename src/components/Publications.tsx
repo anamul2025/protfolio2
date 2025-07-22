@@ -70,9 +70,9 @@ export default function Publications() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Publications</span>
+            Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Publications</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-4"></div>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Academic contributions and research work in AI/ML, networking, and public health
           </p>
@@ -174,7 +174,7 @@ export default function Publications() {
                         href={pub.researchGate}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500/80 to-purple-600/80 backdrop-blur-sm hover:from-cyan-500 hover:to-purple-600 text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm border border-white/20 hover:border-white/30"
+                        className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500/80 to-blue-600/80 backdrop-blur-sm hover:from-cyan-500 hover:to-blue-600 text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm border border-white/20 hover:border-white/30"
                       >
                         <ExternalLink className="w-4 h-4" />
                         <span>ResearchGate</span>
@@ -205,7 +205,7 @@ export default function Publications() {
         </div>
 
         {/* Research Profile Link */}
-        <div className="bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-8 text-white text-center">
           <BookOpen className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-4">Research Profile</h3>
           <p className="text-cyan-100 mb-6 max-w-2xl mx-auto">

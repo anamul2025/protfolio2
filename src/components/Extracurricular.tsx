@@ -79,9 +79,9 @@ export default function Extracurricular() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Extracurricular <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Activities</span>
+            Extracurricular <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Activities</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-4"></div>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Leadership, community service, and technical contributions beyond academics
           </p>
@@ -122,7 +122,7 @@ export default function Extracurricular() {
         </div>
 
         {/* Achievements Section */}
-        <div className="bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl p-8 text-white">
+        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-8 text-white">
           <div className="text-center mb-8">
             <Trophy className="w-12 h-12 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-2">Key Achievements</h3>

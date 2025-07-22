@@ -29,7 +29,7 @@ export default function ClientCarousel() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Industry Leaders</span>
+            Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Industry Leaders</span>
           </h3>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Collaborating with innovative companies to create exceptional user experiences

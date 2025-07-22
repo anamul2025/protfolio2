@@ -119,7 +119,7 @@ export default function Hero() {
 
           {/* Name and Title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 animate-fade-in">
-            Md Anamul <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Haque</span>
+            Md Anamul <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Haque</span>
           </h1>
           
           <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-6 font-light">
@@ -136,14 +136,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in delay-400">
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="group flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="group flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Eye className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
               <span className="font-semibold">View My Work</span>
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="group flex items-center space-x-2 border-2 border-cyan-400 text-cyan-400 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-600 hover:text-white hover:border-transparent px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105"
+              className="group flex items-center space-x-2 border-2 border-cyan-400 text-cyan-400 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-white hover:border-transparent px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105"
             >
               <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
               <span className="font-semibold">Contact Me</span>

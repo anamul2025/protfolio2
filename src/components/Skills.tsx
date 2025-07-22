@@ -102,9 +102,9 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Skills</span>
+            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-4"></div>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             A comprehensive skill set spanning design, development, and user experience
           </p>
@@ -149,6 +149,8 @@ export default function Skills() {
                       <div className="w-full bg-gray-700 rounded-full h-2">
                         <div
                           className="bg-gradient-to-r from-cyan-400 to-purple-500 h-2 rounded-full transition-all duration-1000 ease-out shadow-lg"
+                        <div
+                          className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full transition-all duration-1000 ease-out shadow-lg"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>
@@ -161,7 +163,7 @@ export default function Skills() {
         </div>
 
         {/* Additional Skills Overview */}
-        <div className="mt-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl p-8 text-white">
+        <div className="mt-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-8 text-white">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">5+</div>
