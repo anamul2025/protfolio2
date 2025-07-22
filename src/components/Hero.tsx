@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, MessageCircle, Eye } from 'lucide-react';
+import { ArrowDown, MessageCircle, Eye, Linkedin, Facebook, Instagram, Send } from 'lucide-react';
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -150,6 +150,60 @@ export default function Hero() {
             </button>
           </div>
 
+          {/* Social Media Links */}
+          <div className="flex justify-center items-center space-x-6 mb-12 animate-fade-in delay-500">
+            <a
+              href="#linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 bg-white/5 backdrop-blur-lg rounded-full border border-white/20 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-110"
+              title="LinkedIn Profile"
+            >
+              <Linkedin className="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition-colors duration-300" />
+            </a>
+            
+            <a
+              href="#behance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 bg-white/5 backdrop-blur-lg rounded-full border border-white/20 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-110"
+              title="Behance Portfolio"
+            >
+              <div className="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition-colors duration-300 font-bold text-sm flex items-center justify-center">
+                Be
+              </div>
+            </a>
+            
+            <a
+              href="#facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 bg-white/5 backdrop-blur-lg rounded-full border border-white/20 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-110"
+              title="Facebook Profile"
+            >
+              <Facebook className="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition-colors duration-300" />
+            </a>
+            
+            <a
+              href="#instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 bg-white/5 backdrop-blur-lg rounded-full border border-white/20 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-110"
+              title="Instagram Profile"
+            >
+              <Instagram className="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition-colors duration-300" />
+            </a>
+            
+            <a
+              href="#telegram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 bg-white/5 backdrop-blur-lg rounded-full border border-white/20 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-110"
+              title="Telegram Profile"
+            >
+              <Send className="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition-colors duration-300" />
+            </a>
+          </div>
           {/* Scroll Indicator */}
           <div className="animate-bounce">
             <button 
@@ -176,6 +230,9 @@ export default function Hero() {
         }
         .delay-400 {
           animation-delay: 0.4s;
+        }
+        .delay-500 {
+          animation-delay: 0.5s;
         }
         .blinking-cursor {
           animation: blink 1s infinite;
