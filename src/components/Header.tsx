@@ -61,6 +61,7 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
               {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+            </button>
             <button className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
               <Download className="w-4 h-4" />
               <span>Resume</span>
@@ -97,6 +98,7 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
                   {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                 </button>
                 <button className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                </button>
                 <button className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
                   <Download className="w-4 h-4" />
                   <span>Resume</span>
