@@ -44,7 +44,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-blue-950 via-gray-900 to-black transition-colors duration-300">
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero />
       <ClientCarousel />

@@ -21,7 +21,7 @@ export default function ClientCarousel() {
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-900 via-black to-gray-900 overflow-hidden relative">
+    <section className="py-16 bg-gradient-to-br from-blue-950 via-gray-900 to-black overflow-hidden relative">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900 z-10 pointer-events-none"></div>
       

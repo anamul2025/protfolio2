@@ -35,7 +35,7 @@ export default function References() {
   };
 
   return (
-    <section id="references" className="py-20 bg-gray-900">
+    <section id="references" className="py-20 bg-gradient-to-br from-blue-950 via-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
