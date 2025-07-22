@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
 
 export default function Education() {
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = itemRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                setVisibleItems(prev => [...prev, index]);
+              }, index * 200); // Stagger animation by 200ms for each item
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
+
   const education = [
     {
       institution: "International Islamic University Chittagong",
@@ -48,8 +80,16 @@ export default function Education() {
         <div className="space-y-8">
           {education.map((edu, index) => (
             <div
+              ref={(el) => itemRefs.current[index] = el}
               key={index}
-              className="group bg-white/5 backdrop-blur-lg rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/10 hover:border-white/20 hover:bg-white/10"
+              className={`group bg-white/5 backdrop-blur-lg rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border border-white/10 hover:border-white/20 hover:bg-white/10 transform ${
+                visibleItems.includes(index) 
+                  ? 'translate-y-0 opacity-100' 
+                  : 'translate-y-8 opacity-0'
+              }`}
+              style={{
+                transitionDelay: visibleItems.includes(index) ? `${index * 100}ms` : '0ms'
+              }}
             >
               <div className="grid lg:grid-cols-4 gap-6 items-center">
                 {/* Institution Icon & Type */}
@@ -120,7 +160,17 @@ export default function Education() {
         </div>
 
         {/* Academic Achievements Summary */}
-        <div className="mt-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl p-8 text-white">
+        <div 
+          ref={(el) => itemRefs.current[education.length] = el}
+          className={`mt-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl p-8 text-white transition-all duration-700 transform ${
+            visibleItems.includes(education.length) 
+              ? 'translate-y-0 opacity-100' 
+              : 'translate-y-8 opacity-0'
+          }`}
+          style={{
+            transitionDelay: visibleItems.includes(education.length) ? `${education.length * 100}ms` : '0ms'
+          }}
+        >
           <div className="text-center mb-8">
             <GraduationCap className="w-12 h-12 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-2">Academic Excellence</h3>
