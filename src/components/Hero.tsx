@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowDown, MessageCircle, Eye } from 'lucide-react';
 
 export default function Hero() {
+  const [scrollY, setScrollY] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -12,6 +13,16 @@ export default function Hero() {
   const deletingSpeed = 50;
   const pauseAtEnd = 2000;
   const pauseBeforeDelete = 1000;
+
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const currentPhrase = phrases[currentPhraseIndex];
@@ -55,14 +66,47 @@ export default function Hero() {
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
+        <div 
+          className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 transition-transform duration-75 ease-out"
+          style={{
+            transform: `translateY(${scrollY * 0.3}px) translateX(${scrollY * 0.1}px)`
+          }}
+        ></div>
+        <div 
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 transition-transform duration-75 ease-out"
+          style={{
+            transform: `translateY(${scrollY * -0.2}px) translateX(${scrollY * -0.1}px)`
+          }}
+        ></div>
+        {/* Additional floating elements for enhanced parallax */}
+        <div 
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-20"
+          style={{
+            transform: `translateY(${scrollY * 0.15}px) rotate(${scrollY * 0.1}deg)`
+          }}
+        ></div>
+        <div 
+          className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-25"
+          style={{
+            transform: `translateY(${scrollY * -0.25}px) rotate(${scrollY * -0.05}deg)`
+          }}
+        ></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div 
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        style={{
+          transform: `translateY(${scrollY * 0.1}px)`
+        }}
+      >
         <div className="text-center">
           {/* Animated Profile Image */}
-          <div className="relative inline-block mb-8">
+          <div 
+            className="relative inline-block mb-8"
+            style={{
+              transform: `translateY(${scrollY * 0.05}px)`
+            }}
+          >
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-r from-cyan-400 to-purple-600 p-1 shadow-2xl">
               <img 
                 src="/anamul_picture.jpg" 
