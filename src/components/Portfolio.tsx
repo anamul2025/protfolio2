@@ -156,7 +156,6 @@ export default function Portfolio() {
 
                 {/* Action Buttons */}
                 <div className="flex space-x-3">
-                  <button className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500/80 to-purple-600/80 backdrop-blur-sm hover:from-cyan-500 hover:to-purple-600 text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm border border-white/20 hover:border-white/30">
                   <button className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500/80 to-blue-600/80 backdrop-blur-sm hover:from-cyan-500 hover:to-blue-600 text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm border border-white/20 hover:border-white/30">
                     <ExternalLink className="w-4 h-4" />
                     <span>View Case Study</span>
